@@ -99,6 +99,14 @@ Try it yourself!
 -- Select a new driver id (needs to be unique)
 -- Make sure to deparate arguments by a semicolon!
 
+INSERT INTO drivers VALUES (7, 'Turner Goetsch', 'American', 23);
+
+INSERT INTO drivers VALUES (9, 'Ben Zamler', 'Moldovan', 1);
+
+INSERT INTO drivers VALUES (10, 'David Evans', 'Malasian', 3);
+
+INSERT INTO drivers VALUES (11, 'Justin Whitney', 'Testosteronian', 4);
+
 
 
 -- SQLBook: Markup
@@ -131,7 +139,7 @@ WHERE nationality = 'German';
 
 -- Evalute OR conditions
 SELECT * FROM drivers
-WHERE (nationality = 'United States') OR (nationality = 'Indian');
+WHERE (nationality = 'American') OR (nationality = 'Moldovan');
 
 -- Evaluate AND conditions
 SELECT * FROM drivers
@@ -187,6 +195,8 @@ with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
 
+SELECT nationality, driver_id FROM drivers
+WHERE (victories > 60);
 
 
 -- SQLBook: Markup

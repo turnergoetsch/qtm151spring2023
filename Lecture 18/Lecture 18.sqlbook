@@ -83,9 +83,15 @@ Try it yourself!
 
 - Create a new table for "bills_subjects"
 -- SQLBook: Code
-# Write your own code
 
 
+DROP TABLE IF EXISTS bills_subjects;
+
+CREATE TABLE bills_subjects (
+    "Congress" int NOT NULL,
+    bill_number int,
+    bill_type varchar(30)
+)
 
 -- SQLBook: Markup
 # <span style="color:darkblue"> II. Import CSV into SQL </span>
@@ -123,6 +129,8 @@ WITH (DELIMITER ',', FORMAT csv, HEADER MATCH);
 -----  FORMAT indicates that this is a CSV
 -----  HEADER MATCH indicates that the first row contains column
 -----  names and should be ignored when importing.
+
+
 -- SQLBook: Markup
 <font size = "5">
 

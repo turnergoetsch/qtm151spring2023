@@ -6,7 +6,7 @@
 <font size = "5">
 Print your name below
 -- SQLBook: Code
-
+RETURN("Turner Goetsch")
 -- SQLBook: Markup
 
 <font size = "5">
@@ -32,7 +32,9 @@ HINT: Include any column names with upper case in doube quotations, <br> e.g.
 -- SQLBook: Code
 -- Write your own code
 
+DROP TABLE IF EXISTS results;
 
+CREATE TABLE results
 
 
 

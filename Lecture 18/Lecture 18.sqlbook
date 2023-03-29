@@ -35,7 +35,7 @@ United States Congress dataset
 
 Create table from codebook/dictionary
 -- SQLBook: Code
--- Active: 1680027197221@@127.0.0.1@5432@postgres
+-- Active: 1679950694906@@127.0.0.1@5432@postgres
 -- We start by deleting the old table
 -- SQL does not allow you to create a table if one already exists
 DROP TABLE IF EXISTS us_congress_members;
@@ -52,6 +52,7 @@ CREATE TABLE us_congress_members (
         chamber      varchar(30)
 );
 -- SQLBook: Code
+-- Active: 1679950694906@@127.0.0.1@5432@postgres
 -- (i) The NOT NULL option is a special restrition saying
 --     that you are not allowed to enter missing data for this column
 --     SQL includes a lot of data quality checks like this
@@ -131,6 +132,7 @@ Try it yourself!
 additional ".sqlbooks" in this folder
 
 -- SQLBook: Code
+-- Active: 1679950694906@@127.0.0.1@5432@postgres
 -- Write your own code
 --
 -- The argument associaated with COPY is the dataset in our server
@@ -143,10 +145,9 @@ additional ".sqlbooks" in this folder
 
 -- You just have to change the FROM argument
 
-
-
-
-
+COPY us_congress_members
+FROM '/private/tmp/data/us_congress_members.csv'
+WITH (DELIMITER ',', FORMAT csv, HEADER);
 
 -- SQLBook: Markup
 
@@ -162,7 +163,7 @@ SELECT * FROM us_congress_members
 -- SQLBook: Code
 -- Write your own code
 
-
+SELECT * FROM us_congress_members
 
 
 -- SQLBook: Markup
@@ -246,7 +247,8 @@ Count members of group
 SELECT party_name,       
        COUNT(*) AS num_members       
 FROM us_congress_members
-GROUP BY party_name;
+GROUP BY party_name
+ORDER BY num_members DESC
 -- SQLBook: Markup
 <font size = "5">
 
